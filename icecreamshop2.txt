@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label, input, select, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Ice Cream Shop</h1>
+    </header>
+    <main>
+        <h2>Our Flavors</h2>
+        <ul>
+            <li>Vanilla</li>
+            <li>Chocolate</li>
+            <li>Strawberry</li>
+            <li>Mint Chocolate Chip</li>
+        </ul>
+
+        <h2>Try Our Specials</h2>
+        <div>
+            <div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <img src="https://th.bing.com/th/id/OIP.jUCgKU80-tULdWDHlOKW1wHaJ4?pid=ImgDet&rs=1" alt="Special Ice Cream" height="400" width="300" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <img src="https://i.pinimg.com/originals/29/89/da/2989da09cc83085e12f724742dbe5093.jpg" alt="Special Ice Cream" height="400" width="300" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <img src="https://th.bing.com/th/id/OIP.8jfqdGQr7uyzh12NbGyZ-QHaLL?pid=ImgDet&rs=1" alt="Special Ice Cream" height="400" width="300" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <img src="https://www.smalltownwoman.com/wp-content/uploads/2015/06/Mint-Chocoalte-Chipe-Ice-Cream-DSC_0478.jpg" alt="Special Ice Cream" height="400" width="300" class="img-fluid">
+                    </div>
+                </div>
+                
+                <h2>Get in Touch</h2>
+                <p>
+                    Have a question or a suggestion? <a href="mailto:contact@icecreamshop.com">Contact Us</a>.
+                </p>
+         
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <p>Â© 2023 Ice Cream Shop. All rights reserved.</p>
+    </footer>
+
+    <main>
+        <h2>Order Form</h2>
+        <form action="/submit_order" method="post">
+            <label for="flavor">Select Your Favorite Flavor:</label>
+            <select id="flavor" name="flavor" required>
+                <option value="">Choose...</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="mint_chip">Mint Chocolate Chip</option>
+            </select>
+
+            <label for="toppings">Toppings (select multiple):</label>
+            <select id="toppings" name="toppings" multiple>
+                <option value="sprinkles">Sprinkles</option>
+                <option value="chocolate_sauce">Chocolate Sauce</option>
+                <option value="whipped_cream">Whipped Cream</option>
+                <option value="nuts">Nuts</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+
+            <label for="special_request">Special Request:</label>
+            <textarea id="special_request" name="special_request" rows="4"></textarea>
+
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions.</label>
+
+            <input type="submit" value="Place Order">
+        </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
